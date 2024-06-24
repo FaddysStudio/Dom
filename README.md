@@ -18,11 +18,13 @@ instr 13, dom
 
 aNote = 0
 
-iPitch init frac ( p1 )
+iPitch init p4/p5
 
 iAttack init 1/32
 iDecay init 1/8 
 iRelease init 1/2
+
+p3 init iAttack + iDecay + iRelease
 
 aMainSubAmplitude linseg 0, iAttack, 1, iDecay, .25, iRelease, 0
 aMainSubFrequency linseg cpsoct ( 8 + iPitch ), iAttack, cpsoct ( 5 + iPitch )
@@ -91,7 +93,7 @@ let audio = `audio/${ index }.wav`;
 
 console .log ( [
 
-`echo "i [ 13 + ${ step / dom .degrees } ] 0 1" > ${ score }`,
+`echo "i 13 0 1 ${ step } ${ dom .degrees }" > ${ score }`,
 `csound -o ${ audio } index.orc ${ score }`,
 `aplay ${ audio }`
 

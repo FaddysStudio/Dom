@@ -28,7 +28,7 @@ let audio = `audio/${ index }.wav`;
 
 console .log ( [
 
-`echo "i [ 13 + ${ step / dom .degrees } ] 0 1" > ${ score }`,
+`echo "i 13 0 1 ${ step } ${ dom .degrees }" > ${ score }`,
 `csound -o ${ audio } index.orc ${ score }`,
 `aplay ${ audio }`
 

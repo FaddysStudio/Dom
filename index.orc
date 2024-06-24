@@ -11,11 +11,13 @@ instr 13, dom
 
 aNote = 0
 
-iPitch init frac ( p1 )
+iPitch init p4/p5
 
 iAttack init 1/32
 iDecay init 1/8 
 iRelease init 1/2
+
+p3 init iAttack + iDecay + iRelease
 
 aMainSubAmplitude linseg 0, iAttack, 1, iDecay, .25, iRelease, 0
 aMainSubFrequency linseg cpsoct ( 8 + iPitch ), iAttack, cpsoct ( 5 + iPitch )
