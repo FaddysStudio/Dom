@@ -1,3 +1,5 @@
+#!/usr/bin/env roll
+
 # Faddy's Dom/Kick Synthesizer
 
 ?# if [ ! -d node_modules/@faddys/scenarist ]; then npm i @faddys/scenarist ; fi
@@ -11,7 +13,7 @@ ksmps = 32
 nchnls = 2
 0dbfs = 1
 
-giStrikeFT ftgen 0, 0, 256, 1, "marmstk1.wav", 0, 0, 0
+giStrikeFT ftgen 0, 0, 256, 1, "prerequisites/marmstk1.wav", 0, 0, 0
 giVibratoFT ftgen 0, 0, 128, 10, 1
 
 instr 13, dom
